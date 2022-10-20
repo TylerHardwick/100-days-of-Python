@@ -54,6 +54,7 @@ def vend():
     deposit = coin_check()
     if deposit < MENU[chosen_drink]["cost"]:
         print("Sorry that is not enough money. Money refunded.")
+        return 0
     else:
         make_drink(chosen_drink)
         change = deposit - MENU[chosen_drink]["cost"]
