@@ -45,9 +45,9 @@ def coin_check():
 
 
 def make_drink(drink):
-    resources["water"] -= MENU[drink]["ingredients"]["water"]
-    resources["milk"] -= MENU[drink]["ingredients"]["milk"]
-    resources["coffee"] -= MENU[drink]["ingredients"]["coffee"]
+    for item in MENU[drink]["ingredients"]:
+        resources[item] -= MENU[drink]["ingredients"][item]
+
 
 
 def vend():
