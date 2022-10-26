@@ -11,16 +11,21 @@ class Scoreboard(Turtle):
         self.penup()
         self.sety(260)
         self.current_score = 0
+        with open("data.txt") as data:
+            self.high_score = int(data.read())
         self.update_score()
 
     def update_score(self):
         self.clear()
-        self.write(arg=f"Current Score: {self.current_score}", align= ALIGNMENT, font=FONT)
+        self.write(arg=f"Score: {self.current_score}    High Score: {self.high_score}", align= ALIGNMENT, font=FONT)
 
-
-    def game_over(self):
-        self.goto(0,0)
-        self.write(arg=f"Game Over... GG", align=ALIGNMENT, font=FONT)
+    def reset_score(self):
+        if self.current_score > self.high_score:
+            self.high_score = self.current_score
+            with open("data.txt", mode="w") as data:
+                data.write(f"{self.high_score}")
+        self.current_score = 0
+        self.update_score()
 
     def increase_score(self):
         self.current_score +=1

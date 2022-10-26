@@ -11,8 +11,6 @@ screen.bgcolor("black")
 screen.title("Tyler's Snake Game")
 screen.tracer(0)
 
-
-
 food = Food()
 snake = Snake()
 scoreboard = Scoreboard()
@@ -37,15 +35,13 @@ while play_game:
 
     # Detect collision with wall.
     if snake.head.xcor() >= 300 or snake.head.xcor() <= -300 or snake.head.ycor() >= 300 or snake.head.ycor() <= -300:
-        play_game = False
-        scoreboard.game_over()
-
+        scoreboard.reset_score()
+        snake.reset_snake()
     # Detect collision with tail.
     for segment in snake.snake_segments[1:]:
         if snake.head.distance(segment) < 10:
-            play_game = False
-            scoreboard.game_over()
-
+            scoreboard.reset_score()
+            snake.reset_snake()
 
 
 
