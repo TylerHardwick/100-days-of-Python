@@ -64,5 +64,5 @@ class InternetSpeedTwitterBot:
 
 bot = InternetSpeedTwitterBot()
 bot.get_internet_speed()
-if bot.download_result < PROMISED_DOWN or bot.upload_result < PROMISED_DOWN:
+if bot.download_result < PROMISED_DOWN or bot.upload_result < PROMISED_UP:
     bot.tweet_at_provider()
