@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+    {% block styling %}
+
+{% endblock %}
+</style>
+
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+
+
+{% block content %}{% endblock %}
+</body>
+</html>
