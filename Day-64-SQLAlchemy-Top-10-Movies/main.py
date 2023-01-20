@@ -46,7 +46,7 @@ with app.app_context():
 
 def find_movie(movie_title):
     tmdb_url = "https://api.themoviedb.org/3/search/movie?"
-    api_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYjAxYzg2ZjA4ZmZmYjg3N2IxOWU0ZTllZjg1NDZjZSIsInN1YiI6IjYzYzA4MjI3MjNiZTQ2MDA4MTdjMjg4MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.M1jCpiymo_Go6cVaqoWOTMU9pmlbbiMwUX26sScg-i0"
+    api_token = "API_TOKEN HERE"
     headers={"Authorization": f"Bearer {api_token}",
              "Content-Type": "application/json;charset=utf-8"}
     parameters = {
